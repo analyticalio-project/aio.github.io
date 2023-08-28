@@ -115,21 +115,23 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-
 #header {
   height: 100px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
   padding: 20px 0;
-  background: rgb(0, 0, 0);
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+  background: rgb(2, 2, 2);
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0);
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 #header.header-scrolled,
 #header.header-pages {
   height: 60px;
   padding: 10px 0;
+  background: rgb(2, 2, 2);
 }
 
 #header .logo h1 {
@@ -137,8 +139,6 @@ h6 {
   margin: 0;
   padding: 0;
   line-height: 1;
-
-
   font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -165,43 +165,60 @@ h6 {
 }
 
 .main-pages {
-  margin-top: 60px;
+  margin-top: 160px; /* Adjust the top margin to add more space between navbar and content */
 }
+
 
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
-
 #intro {
   width: 100%;
   height: 100%;
   position: relative;
-  background: url("../img/image-color.jpg") center bottom no-repeat;
-  background-size: 100% 100%;
-  background-size: cover;
   padding: 200px 0 120px 0;
 }
 
-#intro .intro-img {
-  width: 50%;
-  float: right;
+/* Add styling for the video element */
+#header-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Set the video behind the content */
 }
 
-#intro .intro-info {
-  width: 100%;
-  float: left;
+
+.gradient-text {
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgb(14, 176, 230) 50%, rgb(48, 27, 236) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 1s linear infinite;
 }
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
 
 #intro .intro-info h2 {
   margin-top: 100px;
-  color: #ffdbfe;
+  color: linear-gradient(40deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   margin-bottom: 40px;
   font-size: 48px;
   font-weight: 700;
 }
 
 #intro .intro-info h2 span {
-  color: #74b5fc;
+  color: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;
   text-decoration: underline;
 }
 
@@ -220,14 +237,11 @@ h6 {
 }
 
 #intro .intro-info .btn-get-started {
-  background: #007bff;
-  border: 2px solid #007bff;
-  color: #fff;
+  border: 2px solid #fff;
 }
 
 #intro .intro-info .btn-get-started:hover {
-  background: none;
-  border-color: #fff;
+  background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   color: #fff;
 }
 
@@ -236,8 +250,7 @@ h6 {
 }
 
 #intro .intro-info .btn-services:hover {
-  background: #007bff;
-  border-color: #007bff;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   color: #fff;
 }
 
@@ -457,6 +470,17 @@ h6 {
   color: #fff;
 }
 
+
+/* section-divider */
+/*
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc; /* Change this to your desired color */
+  /* margin: 20px 0; Adjust the margin as needed */
+
+
+
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -466,7 +490,7 @@ h6 {
 
 .section-header h3 {
   font-size: 36px;
-  color: #283d50;
+  color: #ffffff;
   text-align: center;
   font-weight: 500;
   position: relative;
@@ -477,22 +501,22 @@ h6 {
   margin: auto;
   font-size: 15px;
   padding-bottom: 60px;
-  color: #556877;
-  width: 80%;
+  color: #ffffff;
+  width: 60%;
 }
 
 /* Section with background
 --------------------------------*/
 
 .section-bg {
-  background: #f9e8ed;
+  background: linear-gradient(180deg, #000000 10%, #ffffff 100%);
 }
 
 /* About Us Section
 --------------------------------*/
 
 #about {
-  background: #fff;
+  background: #000000;
   padding: 60px 0;
 }
 
@@ -501,17 +525,23 @@ h6 {
 }
 
 #about .about-container .content {
-  background: #fff;
+  background: #000000;
 }
 
 #about .about-container .title {
-  color: #333;
+  color: #ffffff;
   font-weight: 700;
   font-size: 32px;
 }
 
 #about .about-container p {
+  color: #fff;
   line-height: 26px;
+}
+
+
+#about .about-container h4 {
+  color: #fff;
 }
 
 #about .about-container p:last-child {
@@ -519,14 +549,14 @@ h6 {
 }
 
 #about .about-container .icon-box {
-  background: #fff;
+  background: #000000;
   background-size: cover;
   padding: 0 0 30px 0;
 }
 
 #about .about-container .icon-box .icon {
   float: left;
-  background: #fff;
+  background: #000000;
   width: 64px;
   height: 64px;
   display: -webkit-box;
@@ -562,7 +592,7 @@ h6 {
 }
 
 #about .about-container .icon-box:hover .icon i {
-  color: #fff;
+  color: #000000;
 }
 
 #about .about-container .icon-box .title {
@@ -573,7 +603,7 @@ h6 {
 }
 
 #about .about-container .icon-box .title a {
-  color: #283d50;
+  color: #ffffff;
 }
 
 #about .about-container .icon-box .description {
@@ -583,12 +613,19 @@ h6 {
 }
 
 #about .about-extra {
+  color: #ffffff;
   padding-top: 60px;
 }
 
 #about .about-extra h4 {
   font-weight: 600;
   font-size: 24px;
+}
+
+
+.fadeInUp {
+  color: #fff;
+  background-color: #000000;
 }
 
 /* Services Section
@@ -651,16 +688,16 @@ h6 {
 
 #why-us {
   padding: 60px 0;
-  background: #004a99;
+  background: #000000;
 }
 
 #why-us .section-header h3,
 #why-us .section-header p {
-  color: #fff;
+  color: #ffffff;
 }
 
 #why-us .card {
-  background: #00458f;
+  background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   border-color: #00458f;
   border-radius: 10px;
   margin: 0 15px;
@@ -934,10 +971,32 @@ h6 {
 --------------------------------*/
 
 #team {
-  background: rgb(248, 223, 223);
   padding: 60px 0;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
+
+#team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(153, 0, 255, 1) 0%, rgba(0, 201, 255, 1) 50%, rgba(53, 109, 253, 1) 60%, rgba(75, 69, 252, 1) 70%);
+  animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 #team .member {
   text-align: center;
